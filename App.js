@@ -1,17 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { NativeBaseProvider, Box } from 'native-base';
+import { NativeBaseProvider } from 'native-base';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './screens';
+import { useTheme } from './colors';
 
+
+const config = {
+  // dependencies: {
+  //   'linear-gradient': require('react-native-linear-gradient').default,
+  // },
+};
 
 
 export default function App() {
+  const theme = useTheme();
   return (
-    <NativeBaseProvider>
-      <Box style={styles.container}>
-        <Text>Great - now we're off</Text>
-        <StatusBar style="auto" />
-      </Box>
+    <NativeBaseProvider config={config} theme={theme}>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
