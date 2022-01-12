@@ -29,46 +29,46 @@ const NAMES = [
       avatarUrl:
         "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
-    // {
-    //   id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    //   fullName: "Sujitha Mathur",
-    //   nameLower: "sujitha mathur",
-    //   timeStamp: "11:11 PM",
-    //   recentText: "Cheer up, there!",
-    //   avatarUrl:
-    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyEaZqT3fHeNrPGcnjLLX1v_W4mvBlgpwxnA&usqp=CAU",
-    // },
-    // {
-    //   id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    //   fullName: "Anci Barroco",
-    //   nameLower: "anci barroco",
-    //   timeStamp: "6:22 PM",
-    //   recentText: "Good Day!",
-    //   avatarUrl: "https://miro.medium.com/max/1400/0*0fClPmIScV5pTLoE.jpg",
-    // },
-    // {
-    //   id: "68694a0f-3da1-431f-bd56-142371e29d72",
-    //   fullName: "Aniket Kumar",
-    //   nameLower: "aniket kumar",
-    //   timeStamp: "8:56 PM",
-    //   recentText: "All the best",
-    //   avatarUrl:
-    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr01zI37DYuR8bMV5exWQBSw28C1v_71CAh8d7GP1mplcmTgQA6Q66Oo--QedAN1B4E1k&usqp=CAU",
-    // },
-    // {
-    //   id: "28694a0f-3da1-471f-bd96-142456e29d72",
-    //   fullName: "Kiara",
-    //   nameLower: "kiara",
-    //   timeStamp: "12:47 PM",
-    //   recentText: "I will call today.",
-    //   avatarUrl:
-    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU",
-    // },
+    {
+      id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+      fullName: "Sujitha Mathur",
+      nameLower: "sujitha mathur",
+      timeStamp: "11:11 PM",
+      recentText: "Cheer up, there!",
+      avatarUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyEaZqT3fHeNrPGcnjLLX1v_W4mvBlgpwxnA&usqp=CAU",
+    },
+    {
+      id: "58694a0f-3da1-471f-bd96-145571e29d72",
+      fullName: "Anci Barroco",
+      nameLower: "anci barroco",
+      timeStamp: "6:22 PM",
+      recentText: "Good Day!",
+      avatarUrl: "https://miro.medium.com/max/1400/0*0fClPmIScV5pTLoE.jpg",
+    },
+    {
+      id: "68694a0f-3da1-431f-bd56-142371e29d72",
+      fullName: "Aniket Kumar",
+      nameLower: "aniket kumar",
+      timeStamp: "8:56 PM",
+      recentText: "All the best",
+      avatarUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr01zI37DYuR8bMV5exWQBSw28C1v_71CAh8d7GP1mplcmTgQA6Q66Oo--QedAN1B4E1k&usqp=CAU",
+    },
+    {
+      id: "28694a0f-3da1-471f-bd96-142456e29d72",
+      fullName: "Kiara",
+      nameLower: "kiara",
+      timeStamp: "12:47 PM",
+      recentText: "I will call today.",
+      avatarUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU",
+    },
   ]
 
 const LeagueScreen = ({ navigation }) => {
     const colors = useAppColors();
-    const [ name, setName ] = React.useState(null);
+    const [ leagueName, setLeagueName ] = React.useState(null);
     const [ friendValue, setFriendValue] = React.useState(null);
     const [ selectedFriends, setSelectedFriends ] = React.useState([]);
     const [ submitHidden, setSubmitHidden ] = React.useState(false);
@@ -82,7 +82,7 @@ const LeagueScreen = ({ navigation }) => {
         setSubmitHidden(false);
         setFriendValue(null);
     }
-    console.log("name: "+ name);
+    console.log("name: "+ leagueName);
     console.log("friendValue: "+ friendValue);
     return (
         <Box w="100%" h="100%">
@@ -103,7 +103,7 @@ const LeagueScreen = ({ navigation }) => {
                         submitHidden ? null :
                     <Box padding={5}>
                         {
-                            name ? null :
+                            leagueName ? null :
                             <Text 
                             paddingBottom={5} 
                             color={colors.fore}
@@ -120,7 +120,8 @@ const LeagueScreen = ({ navigation }) => {
                             placeholder='League name'
                             size="xl"
                             color={colors.fore}
-                            onSubmitEditing={(e)=>setName(e.nativeEvent.text)}
+                            value={leagueName}
+                            onSubmitEditing={(e)=>setLeagueName(e.nativeEvent.text)}
                             InputLeftElement={
                                 <Icon
                                   as={<MaterialIcons name="view-comfortable" />}
@@ -135,7 +136,7 @@ const LeagueScreen = ({ navigation }) => {
                 </PresenceTransition>
             <ScrollView keyboardShouldPersistTaps="handled">
                 <PresenceTransition
-                    visible={name}
+                    visible={leagueName}
                     initial={{
                     opacity: 0,
                     }}
@@ -298,7 +299,7 @@ const LeagueScreen = ({ navigation }) => {
                                 padding="1"
                                 color={colors.bg}
                             >
-                                Submit
+                                Create league
                             </Text>
                         )
                     }
