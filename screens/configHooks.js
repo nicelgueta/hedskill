@@ -1,4 +1,5 @@
 import HomeScreen from './home';
+import LeagueScreen from './league';
 import { useAppColors } from '../colors';
 import { useColorMode } from "native-base";
 
@@ -12,11 +13,19 @@ export const useScreenConfig = () => {
             customOptions: {
                 title: "hedskill"
             }
-        }
+        },
+        {
+            name: "League",
+            component: LeagueScreen,
+            customOptions: {
+                title: "Create new league"
+            }
+        },
+        
     ])
 };
 
-export const useMenuOptions = () => {
+export const useMenuOptions = (navigation) => {
     const { colorMode, toggleColorMode} = useColorMode();
     const inverseColorMode = colorMode == 'dark' ? 'light' : 'dark';
     return ({
@@ -24,10 +33,6 @@ export const useMenuOptions = () => {
                 {
                     item: "Account Settings",
                     action: () => alert("open settings")
-                },
-                {
-                    item: "Leagues",
-                    action: () => alert("open leagues")
                 },
             ],
             App: [

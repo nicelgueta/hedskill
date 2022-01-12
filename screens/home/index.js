@@ -15,7 +15,7 @@ const HomeScreen = ({ navigation }) => {
     const colors = useAppColors();
     const { isOpen, onToggle } = useDisclose();
     return (
-        <Box bg={colors.bgSecondary} h="100%" padding={5}>
+        <Box bg={colors.bg} h="100%" padding={5}>
             <VStack alignItems="flex-end">
                 <Box minH="90%" alignItems="flex-end" justifyContent="flex-end">
                     <Stagger
@@ -51,7 +51,7 @@ const HomeScreen = ({ navigation }) => {
                             },
                         }}
                     >
-                        <IconButton
+                        {/* <IconButton
                             mb="4"
                             variant="solid"
                             bg={colors.primary}
@@ -88,7 +88,7 @@ const HomeScreen = ({ navigation }) => {
                                 color="warmGray.50"
                             />
                             }
-                        />
+                        /> */}
                         <IconButton
                             mb="4"
                             variant="solid"
@@ -98,12 +98,12 @@ const HomeScreen = ({ navigation }) => {
                             borderRadius="full"
                             icon={
                             <Icon
-                                as={MaterialCommunityIcons}
+                                as={MaterialIcons}
                                 _dark={{
                                 color: "warmGray.50",
                                 }}
                                 size="8"
-                                name="video"
+                                name="people"
                                 color="warmGray.50"
                             />
                             }
@@ -113,6 +113,7 @@ const HomeScreen = ({ navigation }) => {
                             variant="solid"
                             bg={colors.primary}
                             size="lg"
+                            onPress={()=>navigation.navigate("League")}
                             borderRadius="full"
                             icon={
                             <Icon
@@ -136,6 +137,7 @@ const HomeScreen = ({ navigation }) => {
                         size="lg"
                         onPress={onToggle}
                         bg={colors.primary}
+                        _active={{bg: colors.foreActive}}
                         icon={
                             <Icon
                                 as={MaterialIcons}

@@ -12,9 +12,9 @@ export const useAppColors = () => {
         colors.bg = "#000e21"
         colors.bgDarker = "#18181b"
 
-        colors.bgSecondaryLighter = "#002851"
+        colors.bgSecondaryLighter = colors.bgLighter 
         colors.bgSecondary = colors.bg // dark is same bg
-        colors.bgSecondaryDarker = "#18181b"
+        colors.bgSecondaryDarker = colors.bgDarker
 
         colors.foreLighter= primaryLighter
         colors.fore = primary
@@ -24,9 +24,9 @@ export const useAppColors = () => {
         colors.foreSecondary = primary
         colors.foreSecondaryDarker = primaryDarker
 
-        colors.foreActive = "#00B5D8"
-        colors.foreActiveLight = "#0BC5EA"
-        colors.foreActiveDark = "#00A3C4"
+        colors.foreActive = "#6366f1"
+        colors.foreActiveLight = "#818cf8"
+        colors.foreActiveDark = "#4f46e5"
 
         colors.scheme = "orange"
         colors.bgGradientDtL = {
@@ -37,25 +37,25 @@ export const useAppColors = () => {
               },
         }
     } else {
-        colors.bgLighter = primaryLighter
-        colors.bg = primary
-        colors.bgDarker = primaryDarker
+        colors.bgSecondaryLighter = primaryLighter
+        colors.bgSecondary = primary
+        colors.bgSecondaryDarker = primaryDarker
 
-        colors.bgSecondaryLighter = "#fafaf9"
-        colors.bgSecondary = "#f5f5f4"
-        colors.bgSecondaryDarker = "#e7e5e4"
+        colors.bgLighter = "#fafaf9"
+        colors.bg = "#ecfdf5"
+        colors.bgDarker = "#e7e5e4"
 
-        colors.fore = "#ecfdf5"
+        colors.fore = "#10b981"
         colors.foreLighter = "#fff"
         colors.foreDarker = "#d1fae5"
 
-        colors.foreSecondary = primary
-        colors.foreSecondaryLighter= primaryLighter
-        colors.foreSecondaryDarker = primaryDarker
+        colors.foreSecondary = "#ecfdf5"
+        colors.foreSecondaryLighter= "#fff"
+        colors.foreSecondaryDarker = "#d1fae5"
         
-        colors.foreActive = "#48BB78"
-        colors.foreActiveLight = "#68D391"
-        colors.foreActiveDark = "#38A169"
+        colors.foreActive = "#06b6d4"
+        colors.foreActiveLight = "#22d3ee"
+        colors.foreActiveDark = "#0891b2"
         colors.scheme = "tertiary"
     }
     return { ...colors, primary, primaryLighter, primaryDarker };

@@ -13,7 +13,7 @@ import { useMenuOptions } from "./configHooks";
 
 const MenuButton = (props) => {
     const colors = useAppColors();
-    const menuOptions = useMenuOptions();
+    const menuOptions = useMenuOptions(props.navigation);
     const menuSections = Object.keys(menuOptions);
     return(
         <Center h="100%">
@@ -21,12 +21,10 @@ const MenuButton = (props) => {
                 <Menu
                     w="190"
                     closeOnSelect={true}
-                    onOpen={() => console.log("opened")}
-                    onClose={() => console.log("closed")}
                     trigger={(triggerProps) => {
                     return (
                         <Pressable {...triggerProps}>
-                        <HamburgerIcon color={colors.fore}/>
+                        <HamburgerIcon color={colors.foreSecondary}/>
                         </Pressable>
                     )
                     }}

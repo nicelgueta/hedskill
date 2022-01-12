@@ -4,19 +4,19 @@ import { useScreenConfig } from './configHooks';
 import { useAppColors } from '../colors';
 import MenuButton from "./menu-button";
 
-export const useHeaderOptions = () => {
+export const useHeaderOptions = (navigation) => {
     const colors = useAppColors();
     return (
         {
             headerRight: () => (
-                <MenuButton />
+                <MenuButton navigation={navigation} />
             ),
             headerStyle: {
-                backgroundColor: colors.bg,
+                backgroundColor: colors.bgSecondary,
                 textAlign: "center",
-                borderBottomColor: colors.bgLighter
+                borderBottomColor: colors.bgSecondaryLighter
             },
-            headerTintColor: colors.fore,
+            headerTintColor: colors.foreSecondary,
             headerTitleStyle: {
                 // fontFamily: "Proxima Nova",
                 fontSize: 25
@@ -29,7 +29,6 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
     const colors = useAppColors();
-    const commonOptions = useHeaderOptions();
     return(
         <Stack.Navigator>
             {useScreenConfig().map(x=>{return(
@@ -37,7 +36,11 @@ const StackNavigator = () => {
                     key={`screen-${x.name}`}
                     name={x.name} 
                     component={x.component} 
-                    options={{...commonOptions, ...x.customOptions}}
+                    options={
+                        ({ navigation, route }) => (
+                            {...useHeaderOptions(navigation), ...x.customOptions}
+                        )
+                    }
                 />
             )})}
         </Stack.Navigator>
