@@ -8,12 +8,12 @@ import {
     Center,
     NativeBaseProvider,
   } from "native-base"
-import { useAppColors } from "../colors";
-import { useMenuOptions } from "./configHooks";
+import { useAppColors } from "../../colors";
+import { useMenuOptions } from "../configHooks";
 
 const MenuButton = (props) => {
     const colors = useAppColors();
-    const menuOptions = useMenuOptions(props.navigation);
+    const menuOptions = useMenuOptions();
     const menuSections = Object.keys(menuOptions);
     return(
         <Center h="100%">

@@ -11,9 +11,10 @@ import {
  import { MaterialCommunityIcons, MaterialIcons, Octicons } from "@expo/vector-icons";
 import { useAppColors } from '../../colors';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, props }) => {
     const colors = useAppColors();
     const { isOpen, onToggle } = useDisclose();
+    console.log(props)
     return (
         <Box bg={colors.bg} h="100%" padding={5}>
             <VStack alignItems="flex-end">
@@ -93,8 +94,11 @@ const HomeScreen = ({ navigation }) => {
                             mb="4"
                             variant="solid"
                             bg={colors.primary}
-                            colorScheme="teal"
+                            _pressed={{
+                                bg: colors.foreActive
+                            }}
                             size="lg"
+                            onPress={()=>navigation.navigate("Friends")}
                             borderRadius="full"
                             icon={
                             <Icon
@@ -112,6 +116,9 @@ const HomeScreen = ({ navigation }) => {
                             mb="4"
                             variant="solid"
                             bg={colors.primary}
+                            _pressed={{
+                                bg: colors.foreActive
+                            }}
                             size="lg"
                             onPress={()=>navigation.navigate("League")}
                             borderRadius="full"
@@ -137,7 +144,9 @@ const HomeScreen = ({ navigation }) => {
                         size="lg"
                         onPress={onToggle}
                         bg={colors.primary}
-                        _active={{bg: colors.foreActive}}
+                        _pressed={{
+                            bg: colors.foreActive
+                        }}
                         icon={
                             <Icon
                                 as={MaterialIcons}

@@ -1,7 +1,10 @@
 import HomeScreen from './home';
 import LeagueScreen from './league';
+import FriendScreen from './friends';
 import { useAppColors } from '../colors';
 import { useColorMode } from "native-base";
+import { useNavigation } from '@react-navigation/native';
+import { Text } from 'native-base';
 
 export const useScreenConfig = () => {
     const colors = useAppColors();
@@ -11,7 +14,10 @@ export const useScreenConfig = () => {
             name: "Home",
             component: HomeScreen,
             customOptions: {
-                title: "hedskill"
+                title: "hedskill",
+                headerTitleStyle: {
+                    fontSize: 28
+                }
             }
         },
         {
@@ -21,11 +27,19 @@ export const useScreenConfig = () => {
                 title: "Create new league"
             }
         },
+        {
+            name: "Friends",
+            component: FriendScreen,
+            customOptions: {
+                headerRight: null
+            }
+        },
         
     ])
 };
 
-export const useMenuOptions = (navigation) => {
+export const useMenuOptions = () => {
+    const navigation = useNavigation();
     const { colorMode, toggleColorMode} = useColorMode();
     const inverseColorMode = colorMode == 'dark' ? 'light' : 'dark';
     return ({

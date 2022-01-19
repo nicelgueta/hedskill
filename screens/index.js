@@ -2,14 +2,19 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useScreenConfig } from './configHooks';
 import { useAppColors } from '../colors';
-import MenuButton from "./menu-button";
+import MenuButton from "./nav-components/menu-button";
+import NotificationButton from "./nav-components/notifications-button";
+import { HStack } from 'native-base';
 
-export const useHeaderOptions = (navigation) => {
+export const useHeaderOptions = () => {
     const colors = useAppColors();
     return (
         {
             headerRight: () => (
-                <MenuButton navigation={navigation} />
+                <HStack space={3}>
+                    <NotificationButton />
+                    <MenuButton />
+                </HStack>
             ),
             headerStyle: {
                 backgroundColor: colors.bgSecondary,
@@ -19,7 +24,7 @@ export const useHeaderOptions = (navigation) => {
             headerTintColor: colors.foreSecondary,
             headerTitleStyle: {
                 // fontFamily: "Proxima Nova",
-                fontSize: 25
+                fontSize: 21
             },
         }
     )
@@ -37,8 +42,8 @@ const StackNavigator = () => {
                     name={x.name} 
                     component={x.component} 
                     options={
-                        ({ navigation, route }) => (
-                            {...useHeaderOptions(navigation), ...x.customOptions}
+                        ({ route, navigation}) => (
+                            {...useHeaderOptions(), ...x.customOptions}
                         )
                     }
                 />
