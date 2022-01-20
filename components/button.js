@@ -17,6 +17,7 @@ const AppButton = (props) => {
     const pressableProps = props.pressableProps || {};
     const text = props.text || null;
     const textProps = props._text || {};
+    const leftIcon = props.leftIcon
 
     return(
         <Pressable
@@ -40,12 +41,15 @@ const AppButton = (props) => {
         >
             {
                 ({pressed}) => (
-                    <Text 
-                        {...textProps} 
-                        color={pressed ? active.color : color}
-                    >
-                        {text}
-                    </Text>
+                    <>
+                        {leftIcon}
+                        <Text 
+                            {...textProps} 
+                            color={pressed ? active.color : color}
+                        >
+                            {text}
+                        </Text>
+                    </>
                 )
             }
         </Pressable>
