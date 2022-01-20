@@ -28,3 +28,18 @@ No really - whether you're playing darts in the pub every friday, playing RTS ga
 
 - TrueSkill™ is a registered trademark for the Microsoft TrueSkill™ [XBOX Live](http://www.xbox.com/live) ranking system developed by [Microsoft Research](https://www.microsoft.com/en-us/research). 
 
+
+## Development
+
+The app is still in main development and has not been released on any platform yet.
+
+### Progress to MVP:
+- [x] Friends screen
+- [x] Create league screen
+- [ ] Home screen layout
+- [ ] Login/auth
+- [ ] server-side
+  - [ ] TS API
+  - [ ] user management
+  - [ ] compliance
+
