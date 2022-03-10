@@ -11,10 +11,9 @@ import {
  import { MaterialCommunityIcons, MaterialIcons, Octicons } from "@expo/vector-icons";
 import { useAppColors } from '../../colors';
 
-const HomeScreen = ({ navigation, props }) => {
+const HomeScreen = ({ navigation }) => {
     const colors = useAppColors();
     const { isOpen, onToggle } = useDisclose();
-    console.log(props)
     return (
         <Box bg={colors.bg} h="100%" padding={5}>
             <VStack alignItems="flex-end">

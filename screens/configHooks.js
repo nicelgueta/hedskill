@@ -1,6 +1,7 @@
 import HomeScreen from './home';
 import LeagueScreen from './league';
 import FriendScreen from './friends';
+import AddFriendScreen from './addFriend'
 import { useAppColors } from '../colors';
 import { useColorMode } from "native-base";
 import { useNavigation } from '@react-navigation/native';
@@ -34,6 +35,14 @@ export const useScreenConfig = () => {
                 headerRight: null
             }
         },
+        {
+            name: "Add Friend",
+            component: AddFriendScreen,
+            customOptions: {
+                headerRight: null,
+                title: "Add Friend"
+            }
+        }
         
     ])
 };

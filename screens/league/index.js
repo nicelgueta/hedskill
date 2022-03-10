@@ -160,10 +160,11 @@ const LeagueScreen = ({ navigation }) => {
                                             color: colors.bg
                                         }}
                                         onPress={()=>updateFriends(y)}
-                                        content={y.fullName}
+                                        text={y.fullName}
                                         _text={{
                                             w: "100%", 
                                             fontSize: 17,
+                                            color: colors.fore,
                                             padding: 2
                                         }}
                                     />

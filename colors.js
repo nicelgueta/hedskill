@@ -42,12 +42,12 @@ export const useAppColors = () => {
         colors.bgSecondaryDarker = primaryDarker
 
         colors.bgLighter = "#fafaf9"
-        colors.bg = "#ecfdf5"
+        colors.bg = "#fff"//"#ecfdf5"
         colors.bgDarker = "#e7e5e4"
 
         colors.fore = "#10b981"
         colors.foreLighter = "#fff"
-        colors.foreDarker = "#d1fae5"
+        colors.foreDarker = "#0e9c53"
 
         colors.foreSecondary = "#ecfdf5"
         colors.foreSecondaryLighter= "#fff"
@@ -72,7 +72,7 @@ export const useTheme = () => {
             }
         },
         config: {
-            initialColorMode: 'dark',
+            initialColorMode: 'light',
         },
     }
     return (

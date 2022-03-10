@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pressable } from "react-native";
-import { Text } from 'native-base';
+import { Center, Text } from 'native-base';
 import { useAppColors } from '../colors';
 
 const AppButton = (props) => {
@@ -24,8 +24,9 @@ const AppButton = (props) => {
             style={({pressed})=>( pressed ? 
                 {
                     backgroundColor: active.bg,
-                    height: active.h,
-                    width: active.w,
+                    height: h,
+                    width: w,
+                    ...styleProps,
                     ...activeStyleProps
                 }
                 :
