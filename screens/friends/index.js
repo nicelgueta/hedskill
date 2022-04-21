@@ -47,14 +47,15 @@ const FriendScreen = ({ navigation }) => {
           headerRight: () => (
             <IconButton
                 variant="solid"
-                bg={colors.bg}
-                borderColor={colors.fore}
+                bg={colors.fore}
+                borderColor={colors.bg}
+                borderRadius={50}
                 borderWidth={1}
                 _pressed={{
-                    bg: colors.foreActive,
+                    bg: colors.bg,
                     borderColor: colors.foreActive,
                     _icon: {
-                        color: colors.bg
+                        color: colors.fore
                     }
                 }}
                 size="md"
@@ -67,8 +68,7 @@ const FriendScreen = ({ navigation }) => {
                     />
                 }
                 _icon={{
-                    color: colors.fore,
-
+                    color: colors.bg,
                 }}
             />
           )

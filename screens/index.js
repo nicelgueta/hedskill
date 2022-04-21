@@ -13,7 +13,7 @@ export const useHeaderOptions = () => {
             headerRight: () => (
                 <HStack space={3}>
                     <NotificationButton />
-                    <MenuButton />
+                    {/* <MenuButton /> */}
                 </HStack>
             ),
             headerStyle: {

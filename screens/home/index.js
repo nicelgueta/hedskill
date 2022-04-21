@@ -150,7 +150,7 @@ const HomeScreen = ({ navigation }) => {
                             <Icon
                                 as={MaterialIcons}
                                 size="8"
-                                name="add"
+                                name="menu"
                                 _dark={{
                                     color: "warmGray.50",
                                 }}

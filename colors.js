@@ -4,7 +4,7 @@ export const useAppColors = () => {
     const { colorMode, } = useColorMode();
     let colors = {};
     const primaryLighter = "#6ee7b7"
-    const primary = "#34d399"
+    const primary = "#0e9c53"
     const primaryDarker = "#10b981"
 
     if (colorMode === "dark"){
@@ -37,15 +37,15 @@ export const useAppColors = () => {
               },
         }
     } else {
-        colors.bgSecondaryLighter = primaryLighter
+        colors.bgSecondaryLighter = "#13ba64"
         colors.bgSecondary = primary
-        colors.bgSecondaryDarker = primaryDarker
+        colors.bgSecondaryDarker = "#0a8043"
 
         colors.bgLighter = "#fafaf9"
         colors.bg = "#fff"//"#ecfdf5"
         colors.bgDarker = "#e7e5e4"
 
-        colors.fore = "#10b981"
+        colors.fore = primary
         colors.foreLighter = "#fff"
         colors.foreDarker = "#0e9c53"
 
